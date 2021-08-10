@@ -78,13 +78,10 @@ pronto agora nós passamos qualquer quantidade e números e conseguimos somar to
 
 ```js
 	let calculator=[]
-	let i=0;
 	input.onkeyup= (event) => {
 		if(Number(event.key)){
 			calculator.push(event.key);
-			InitCalculator('Carlos',calculator.map(
-				number=>number));
-			i++;
+			InitCalculator('Carlos',calculator.map(number=>number));
 		}
 	}
 ```
