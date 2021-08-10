@@ -3,6 +3,12 @@ Uma tentativa de explicação pratica sobre derivações nos códigos.
 
 Para criar uma calculadora podemos fazer:
 ```js
+const num1=2
+const num2=3
+Console.log(‘O resultado é: ’+(num1+num2));  // O resultado é 5
+```
+Mas se eu quiser trocar os numeros da soma? como eu faria? Usemos funções um pouco para melhorar o funcionamento.
+```js
 function MakeCalc(num1,num2){
 	Console.log(‘O resultado é: ’+(num1+num2));  
 }
@@ -16,7 +22,6 @@ Function MakeCalc(name,num1,num2,num3,num4,num5){
 }
 ```
 agora imagine mudar isso em diversas partes do código, personalizar tipos de entrada e saída, e imagina começar um novo projeto de calculadora mas totalmente diferente, não iria compensar usar isso como base e teríamos que fazer os mesmos processos de um jeito diferente para chegar a um resultado parecido: 😅
-
 ```js
 function MakeCalc1(name,num1,num2,num3,num4,num5){
 	Console.log(name+‘ o resultado é: ’+(num1+num2+num3+num4+num5)); 
@@ -27,7 +32,6 @@ function MakeCalc3435345345345(name,num1,num2,num3){
 	Console.log(name+‘ o resultado é: ’+???????????  
 }
 ```
-
 Porém, creio que a derivação dos artefatos solucione isso, veja o exemplo:
 ```js
 function InitCalculator(...args){
@@ -75,7 +79,6 @@ InitCalculator('Carlos',3,5,5,5,5,5,5,5); // | Carlos, o resultado é: 33
 
 ```
 pronto agora nós passamos qualquer quantidade e números e conseguimos somar todos eles, e se algum dia quisermos criar uma calculadora em html, basta chamar um evento de onclick e passar a função InitCalculator, com os valores digitados. Exemplo:
-
 ```js
 	let calculator=[]
 	input.onkeyup= (event) => {
